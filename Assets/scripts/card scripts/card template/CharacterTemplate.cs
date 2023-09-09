@@ -18,7 +18,7 @@ public class CharacterTemplate : MonoBehaviour
 		}
 		else
 		{
-			currentHP -= dmg
+            currentHP -= dmg;
 		}
     }
 
