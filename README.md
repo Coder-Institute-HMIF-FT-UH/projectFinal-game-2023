@@ -1,2 +1,2 @@
 # project-game-2023
-Final Project Game Division
+Repository for Final Project Game Division 2023
