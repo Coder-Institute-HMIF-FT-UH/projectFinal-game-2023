@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 9106336f6c7652445bcd626a19ffc312
+  - enabled: 1
+    path: Assets/Scenes/MapTraversingScene.unity
+    guid: 9294dc62154aa8040ad3b1a09cd953bb
+  - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/BossFightScene.unity
+    guid: 4355dd842177fce41b997c6645cd6572
+  - enabled: 1
+    path: Assets/Scenes/RestAreaScene.unity
+    guid: 43d0f92eeb4003f4b84accf0b81a04c9
+  - enabled: 1
+    path: Assets/Scenes/EventScene.unity
+    guid: 77265f945c601e74f8d2d5f62a520483
+  - enabled: 1
+    path: Assets/Scenes/ShopScene.unity
+    guid: c165927fc6e681941a22b1687f7d53f2
   m_configObjects: {}
