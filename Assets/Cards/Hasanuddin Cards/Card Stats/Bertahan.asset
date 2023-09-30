@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   artwork: {fileID: 0}
   cost: 1
-  atk: 0
-  def: 6
+  atk: 6
+  def: 0
   buff: 0
   debuff: 0
