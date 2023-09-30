@@ -1,5 +1,6 @@
 //From Hand, Used Card go to Discard Deck//
 //From Hand, Unused Card go to Discard Deck//
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,3 +32,4 @@ public class PlayerDiscardDeck : MonoBehaviour
         }
     }
 }
+*/

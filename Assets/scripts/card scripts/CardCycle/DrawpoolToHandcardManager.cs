@@ -1,5 +1,267 @@
-//drawpool
 using UnityEngine;
+using System.Collections.Generic;
+
+public class DrawpoolToHandcardManager : MonoBehaviour
+{
+    public GameObject drawpool;
+    public GameObject handcard;
+    public GameObject myCardPrefab; 
+    public int totalCards = 50;
+    public int cardsInHand = 5;
+    public float cardSpacingHorizontal = 0.111f; // Jarak antara kartu di tangan secara horizontal
+
+    private List<GameObject> drawpoolCards = new List<GameObject>();
+
+    private void Start()
+    {
+        InitializeDrawpool();
+    }
+
+    private void InitializeDrawpool()
+    {
+        for (int i = 0; i < totalCards; i++)
+        {
+            int randomCost = Random.Range(1, 4); // Acak cost antara 1 hingga 3
+            GameObject newCard = Instantiate(myCardPrefab); // Menggunakan prefab kartu 
+            // metode SetCost pada MyCard
+            newCard.GetComponent<MyCard>().SetCost(randomCost);
+
+            newCard.transform.SetParent(drawpool.transform);
+            newCard.SetActive(false);
+            drawpoolCards.Add(newCard);
+        }
+
+        // Setelah menginisialisasi drawpool, pindahkan kartu ke handcard
+        MoveCardsToHand();
+    }
+
+    private void MoveCardsToHand()
+    {
+        float totalHorizontalWidth = (cardsInHand - 1) * cardSpacingHorizontal;
+        float yOffset = 0f; // kartu hanya diatur secara horizontal
+
+        for (int i = 0; i < cardsInHand; i++)
+        {
+            if (drawpoolCards.Count == 0)
+                break;
+
+            GameObject cardToMove = drawpoolCards[0];
+            // Mengambil kartu pertama dan menggerakkannya ke handcard
+            drawpoolCards.RemoveAt(0);
+
+            cardToMove.transform.SetParent(handcard.transform);
+            cardToMove.SetActive(true);
+
+            // Menyusun kartu dengan jarak horizontal 
+            float xOffset = i * cardSpacingHorizontal - totalHorizontalWidth / 2f;
+            Vector3 newPosition = new Vector3(xOffset, yOffset, 0f);
+            cardToMove.transform.localPosition = newPosition;
+
+            // Menambahkan komponen DragCard ke kartu
+            DragCard dragComponent = cardToMove.AddComponent<DragCard>();
+            dragComponent.InitializeDrag();
+        }
+    }
+}
+
+
+
+//drawpool
+/*using UnityEngine;
+using System.Collections.Generic;
+
+public class DrawpoolToHandcardManager : MonoBehaviour
+{
+    public GameObject drawpool;
+    public GameObject handcard;
+    public GameObject myCardPrefab; // Nama prefab sesuai dengan prefab kartu
+    public int totalCards = 50;
+    public int cardsInHand = 5;
+    public float cardSpacingHorizontal = 0.111f; // Jarak antara kartu di tangan secara horizontal
+
+    private List<GameObject> drawpoolCards = new List<GameObject>();
+
+    private void Start()
+    {
+        InitializeDrawpool();
+    }
+
+    private void InitializeDrawpool()
+    {
+        for (int i = 0; i < totalCards; i++)
+        {
+            int randomCost = Random.Range(1, 4); // Acak cost antara 1 hingga 3
+            GameObject newCard = Instantiate(myCardPrefab); // Menggunakan prefab kartu 
+            // Menggunakan metode SetCost pada MyCard
+            newCard.GetComponent<MyCard>().SetCost(randomCost);
+
+            newCard.transform.SetParent(drawpool.transform);
+            newCard.SetActive(false);
+            drawpoolCards.Add(newCard);
+        }
+
+        // Setelah menginisialisasi drawpool, pindahkan kartu ke handcard
+        MoveCardsToHand();
+    }
+
+    private void MoveCardsToHand()
+    {
+        float totalHorizontalWidth = (cardsInHand - 1) * cardSpacingHorizontal;
+        float yOffset = 0f; // kartu hanya diatur secara horizontal
+
+        for (int i = 0; i < cardsInHand; i++)
+        {
+            if (drawpoolCards.Count == 0)
+                break;
+
+            GameObject cardToMove = drawpoolCards[0];
+            // Mengambil kartu pertama dan menggerakkannya ke handcard
+            drawpoolCards.RemoveAt(0);
+
+            cardToMove.transform.SetParent(handcard.transform);
+            cardToMove.SetActive(true);
+
+            // Menyusun kartu dengan jarak horizontal yang sesuai
+            float xOffset = i * cardSpacingHorizontal - totalHorizontalWidth / 2f;
+            Vector3 newPosition = new Vector3(xOffset, yOffset, 0f);
+            cardToMove.transform.localPosition = newPosition;
+
+            // Menambahkan komponen DragCard ke kartu
+            DragAndDropHandler dragComponent = cardToMove.GetComponent<DragAndDropHandler>();
+        }
+    }
+}
+*/
+
+
+/*using UnityEngine;
+using System.Collections.Generic;
+
+public class DrawpoolToHandcardManager : MonoBehaviour
+{
+    public GameObject drawpool;
+    public GameObject handcard;
+    public GameObject myCardPrefab; // Nama prefab sesuai dengan prefab kartu
+    public int totalCards = 50;
+    public int cardsInHand = 5;
+    public float cardSpacingHorizontal = 0.111f; // Jarak antara kartu di tangan secara horizontal
+
+    private List<GameObject> drawpoolCards = new List<GameObject>();
+
+    private void Start()
+    {
+        InitializeDrawpool();
+    }
+
+    private void InitializeDrawpool()
+    {
+        for (int i = 0; i < totalCards; i++)
+        {
+            int randomCost = Random.Range(1, 4); // Acak cost antara 1 hingga 3
+            GameObject newCard = Instantiate(myCardPrefab); // Menggunakan prefab kartu 
+            // Menggunakan metode SetCost pada MyCard
+            newCard.GetComponent<MyCard>().SetCost(randomCost);
+
+            newCard.transform.SetParent(drawpool.transform);
+            newCard.SetActive(false);
+            drawpoolCards.Add(newCard);
+        }
+
+        // Setelah menginisialisasi drawpool, pindahkan kartu ke handcard
+        MoveCardsToHand();
+    }
+
+    private void MoveCardsToHand()
+    {
+        float totalHorizontalWidth = (cardsInHand - 1) * cardSpacingHorizontal;
+        float yOffset = 0f; // kartu hanya diatur secara horizontal
+
+        for (int i = 0; i < cardsInHand; i++)
+        {
+            if (drawpoolCards.Count == 0)
+                break;
+
+            GameObject cardToMove = drawpoolCards[0];
+            // Mengambil kartu pertama dan menggerakkannya ke handcard
+            drawpoolCards.RemoveAt(0);
+
+            cardToMove.transform.SetParent(handcard.transform);
+            cardToMove.SetActive(true);
+
+            // Menyusun kartu dengan jarak horizontal yang sesuai
+            float xOffset = i * cardSpacingHorizontal - totalHorizontalWidth / 2f;
+            Vector3 newPosition = new Vector3(xOffset, yOffset, 0f);
+            cardToMove.transform.localPosition = newPosition;
+        }
+    }
+}
+*/
+
+
+/*using UnityEngine;
+using System.Collections.Generic;
+
+public class DrawpoolToHandcardManager : MonoBehaviour
+{
+    public GameObject drawpool;
+    public GameObject handcard;
+    public GameObject myCardPrefab; // nama prefab sesuai dengan prefab card
+    public int totalCards = 50;
+    public int cardsInHand = 5;
+    public float cardSpacing = 0.111f; // Jarak antara kartu di tangan
+
+    private List<GameObject> drawpoolCards = new List<GameObject>();
+
+    private void Start()
+    {
+        InitializeDrawpool();
+    }
+
+    private void InitializeDrawpool()
+    {
+        for (int i = 0; i < totalCards; i++)
+        {
+            int randomCost = Random.Range(1, 4); // Acak cost antara 1 hingga 3
+            GameObject newCard = Instantiate(myCardPrefab); // Menggunakan prefab kartu 
+            // Menggunakan metode SetCost pada MyCard
+            newCard.GetComponent<MyCard>().SetCost(randomCost);
+
+            newCard.transform.SetParent(drawpool.transform);
+            newCard.SetActive(false);
+            drawpoolCards.Add(newCard);
+        }
+
+        // Setelah menginisialisasi drawpool, pindahkan kartu ke handcard
+        MoveCardsToHand();
+    }
+
+    private void MoveCardsToHand()
+    {
+        for (int i = 0; i < cardsInHand; i++)
+        {
+            if (drawpoolCards.Count == 0)
+                break;
+
+            GameObject cardToMove = drawpoolCards[0];
+            // mengambil kartu pertama dan menggerakkannya ke tangan pemain 
+            drawpoolCards.RemoveAt(0);
+
+            cardToMove.transform.SetParent(handcard.transform);
+            cardToMove.SetActive(true);
+
+            // Menyusun kartu dengan jarak horizontal yang sesuai
+            float xOffset = i * cardSpacing;
+            Vector3 newPosition = cardToMove.transform.localPosition;
+            newPosition.x = xOffset;
+            cardToMove.transform.localPosition = newPosition;
+        }
+    }
+}
+*/
+
+
+
+/*using UnityEngine;
 using System.Collections.Generic;
 
 public class DrawpoolToHandcardManager : MonoBehaviour
@@ -51,7 +313,7 @@ public class DrawpoolToHandcardManager : MonoBehaviour
         }
     }
 }
-
+*/
 
 
 /*

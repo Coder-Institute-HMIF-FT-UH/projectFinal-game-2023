@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3382486700304757927}
   - component: {fileID: 5711364972355456149}
   - component: {fileID: -6479938999000474288}
+  - component: {fileID: -5470192645098284904}
   m_Layer: 0
   m_Name: Card02
   m_TagString: Untagged
@@ -101,16 +102,7 @@ MonoBehaviour:
   myCardPrefab: {fileID: 0}
   totalCards: 50
   cardsInHand: 5
-  Card01: {fileID: 493718422066470745, guid: f97dcbbc78515f7469ad1fb3e35e4320, type: 3}
-  Card02: {fileID: 3382486700304757929}
-  Card03: {fileID: 3245238275930547627, guid: fbe6f991c8ca82d48bfcc144c95d5456, type: 3}
-  Card04: {fileID: 3373213219475741557, guid: 0a704a3e0ce75ed4cacac8d4954e715c, type: 3}
-  Card05: {fileID: 3447876114042898878, guid: e3c91a0202ca45e4b8f6d1d66cf33310, type: 3}
-  Card01Cost: 1
-  Card02Cost: 1
-  Card03Cost: 2
-  Card04Cost: 2
-  Card05Cost: 3
+  cardSpacingHorizontal: 0.111
 --- !u!114 &-6479938999000474288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +116,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
+--- !u!61 &-5470192645098284904
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382486700304757929}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

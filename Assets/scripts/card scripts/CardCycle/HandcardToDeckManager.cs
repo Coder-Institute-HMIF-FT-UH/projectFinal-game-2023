@@ -1,4 +1,73 @@
-using UnityEngine;
+/*using UnityEngine;
+
+public class HandcardToDeckManager : MonoBehaviour
+{
+    public GameObject handcard; // Prefab kartu tangan
+    public GameObject deck; // GameObject yang merepresentasikan tumpukan deck
+
+    private GameObject draggedCard;
+    private bool isDragging = false;
+    private float dragTimer = 0f; // Untuk mengontrol proses drag-and-drop.
+    private float maxDragTime = 4f; // Waktu maksimum sebelum kartu otomatis dipindahkan ke deck.
+
+    private void Update()
+    {
+        if (isDragging)
+        {
+            dragTimer += Time.deltaTime;
+
+            if (dragTimer >= maxDragTime)
+            {
+                MoveCardToDeck(draggedCard);
+            }
+        }
+    }
+
+    public void StartDrag(GameObject myCardPrefab)
+    {
+        draggedCard = Instantiate(myCardPrefab); // Buat salinan kartu yang akan di-drag.
+        isDragging = true;
+        dragTimer = 0f;
+    }
+
+    public void EndDrag()
+    {
+        isDragging = false;
+    }
+
+    public void DropCardOnPlayerArea()
+    {
+        if (draggedCard != null)
+        {
+            //tambahan
+
+            Destroy(draggedCard); // Hapus kartu yang sedang di-drag.
+            EndDrag();
+        }
+    }
+
+    public void DropCardOnEnemyArea()
+    {
+        if (draggedCard != null)
+        {
+            //
+
+            Destroy(draggedCard); 
+            EndDrag();
+        }
+    }
+
+    private void MoveCardToDeck(GameObject card)
+    {
+        card.transform.SetParent(deck.transform);
+        card.SetActive(false);
+    }
+}
+
+*/
+
+
+/*using UnityEngine;
 
 public class HandcardToDeckManager : MonoBehaviour
 {
@@ -40,7 +109,7 @@ public class HandcardToDeckManager : MonoBehaviour
     {
         if (draggedCard != null)
         {
-            // + Implementasikan logika pemindahan ke area player
+            // + Implementasikan pemindahan ke area player
 
             MoveCardToDeck(draggedCard);
             EndDrag();
@@ -51,7 +120,7 @@ public class HandcardToDeckManager : MonoBehaviour
     {
         if (draggedCard != null)
         {
-            // + Implementasikan logika pemindahan ke area enemy
+            // + Implementasikan pemindahan ke area enemy
             MoveCardToDeck(draggedCard);
             EndDrag();
         }
@@ -63,6 +132,8 @@ public class HandcardToDeckManager : MonoBehaviour
         card.SetActive(false);
     }
 }
+*/
+
 
 
 /*

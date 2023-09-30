@@ -12,6 +12,8 @@ public class MyCard : MonoBehaviour
 }
 
 
+
+
 /*untuk player
 using System.Collections;
 using System.Collections.Generic;

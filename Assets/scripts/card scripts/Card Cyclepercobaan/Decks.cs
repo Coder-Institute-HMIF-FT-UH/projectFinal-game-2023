@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 
 public class Decks : MonoBehaviour
@@ -27,7 +27,7 @@ public class Decks : MonoBehaviour
             //Ambil 5 kartu random,Taruh ke handPool
 
         }
-        */
+        
     }
     public void RemainingCardInHand()
     {
@@ -98,3 +98,4 @@ public class Decks : MonoBehaviour
         }
     }
 }
+*/
