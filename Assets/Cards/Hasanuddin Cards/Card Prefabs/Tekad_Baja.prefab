@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4842191078243751518}
   - component: {fileID: 3226845824833324319}
   m_Layer: 0
-  m_Name: Tikaman_Maut
+  m_Name: Tekad_Baja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64b5c3b0ecd7f54d9eb5e527c83ed12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 1f338d7464fd4c44fa152b762f5691bf, type: 2}
+  card: {fileID: 11400000, guid: c89c871f092931c448e381512d37ad9c, type: 2}
   artworkImage: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
