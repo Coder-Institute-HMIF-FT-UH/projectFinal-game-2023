@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4842191078243751518}
   - component: {fileID: 3226845824833324319}
   m_Layer: 0
-  m_Name: Card_0
+  m_Name: Bertahan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64b5c3b0ecd7f54d9eb5e527c83ed12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 128bb6fd87cc15740bcfa6e352a3aa4d, type: 2}
+  card: {fileID: 11400000, guid: 71275e44f5a871c4780440a0520660e0, type: 2}
   artworkImage: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
