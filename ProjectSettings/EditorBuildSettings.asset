@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/BattleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/BossFightScene.unity
-    guid: 4355dd842177fce41b997c6645cd6572
-  - enabled: 1
     path: Assets/Scenes/RestAreaScene.unity
     guid: 43d0f92eeb4003f4b84accf0b81a04c9
+  - enabled: 1
+    path: Assets/Scenes/BossFightScene.unity
+    guid: 4355dd842177fce41b997c6645cd6572
   - enabled: 1
     path: Assets/Scenes/EventScene.unity
     guid: 77265f945c601e74f8d2d5f62a520483
