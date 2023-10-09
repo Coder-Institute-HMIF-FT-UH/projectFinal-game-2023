@@ -17,8 +17,13 @@ public class PlayerStats : MonoBehaviour
         
     }
 
-    public void losehealth()
+    public void LoseHealth()
     {
         health--;
+    }
+
+    public void LoseShield()
+    {
+        shield--;
     }
 }
