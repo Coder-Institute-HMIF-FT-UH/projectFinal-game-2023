@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StartingCards : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> cardDeck;
+    [SerializeField] public List<GameObject> cardDeck; //Kartu Inventory
 
     void Start()
     {
@@ -49,5 +49,14 @@ public class StartingCards : MonoBehaviour
             // Menandai indeks yang sudah terpilih
             selectedIndices.Add(randomIndex);
         }
+    }
+
+    public List<GameObject> GetInventoryCards()
+    {
+        return cardDeck;
+    }
+    public void AddingCardReward()
+    {
+        //Menambah 1 kartu random ke list kartu inventory
     }
 }
