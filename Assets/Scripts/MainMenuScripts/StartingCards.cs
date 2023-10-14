@@ -51,6 +51,10 @@ public class StartingCards : MonoBehaviour
         }
     }
 
+    public List<GameObject> GetInventoryCards()
+    {
+        return cardDeck;
+    }
     public void AddingCardReward()
     {
         //Menambah 1 kartu random ke list kartu inventory
