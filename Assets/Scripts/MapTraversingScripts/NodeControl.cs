@@ -8,7 +8,7 @@ public class NodeControl : MonoBehaviour
     
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Update()
