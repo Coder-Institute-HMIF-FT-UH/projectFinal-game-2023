@@ -9,4 +9,9 @@ public class SceneMoving : MonoBehaviour
     {
         SceneManager.LoadScene("MapTraversingScene", LoadSceneMode.Single);
     }
+
+    public void LoadBattleScene()
+    {
+        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+    }
 }
