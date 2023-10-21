@@ -8,11 +8,11 @@ public class DragObject : MonoBehaviour
     private Vector3 objectStartPos;
     private bool isDragging = false;
 
-    private Vector3 defaultPosition; // Default position calculated at runtime
+    private Vector3 defaultPosition;
 
     private void Start()
     {
-        defaultPosition = transform.position; // Store the initial position as the default
+        defaultPosition = transform.position;
     }
 
     private void OnMouseDown()
@@ -54,7 +54,7 @@ public class DragObject : MonoBehaviour
         if (isDragging)
         {
             isDragging = false;
-            transform.position = defaultPosition; // Return to the calculated default position
+            transform.position = defaultPosition;
         }
     }
 }

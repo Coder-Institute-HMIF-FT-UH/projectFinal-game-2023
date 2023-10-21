@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3226845824833324319}
   - component: {fileID: 6564099512806707808}
   - component: {fileID: -8511961434534936095}
+  - component: {fileID: -1409270512051375284}
   m_Layer: 0
   m_Name: Barikade
   m_TagString: Untagged
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4842191078243751517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c64b5c3b0ecd7f54d9eb5e527c83ed12, type: 3}
   m_Name: 
@@ -144,3 +145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99c7a8a8922c154c921a25ea0f1f81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1409270512051375284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842191078243751517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c309b49b61ddac41a5db77198b20aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 10
+  energyCost: 1
+  cardType: 1
+  player: {fileID: 0}

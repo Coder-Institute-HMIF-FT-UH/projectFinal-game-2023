@@ -7,7 +7,7 @@ public class GameplaySystem : MonoBehaviour
     [SerializeField] public int energy;
     public List<GameObject> handDeckCards;
     public DrawDeck drawDeckScript;
-    public DiscardDeck discardDeckScript;
+    public DiscardDeck discardDeckScript; 
     public Transform spawnPoint; 
     public float spacing = 1.0f; 
 
@@ -37,7 +37,7 @@ public class GameplaySystem : MonoBehaviour
 
     public void DrawCardToHand()
     {
-        // Ensure that the source list has at least 5 objects to avoid index out of range errors.
+        // Ensure that the source list has at least 5 objects to avoid index out of range errors
         if (drawDeckScript.drawDeckCards.Count >= 5)
         {
             for (int i = 0; i < 5; i++)
