@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5964813873707173083}
   - component: {fileID: 5964813873707173076}
-  - component: {fileID: 5800871249320691657}
+  - component: {fileID: -4340886123956170952}
   m_Layer: 0
   m_Name: Cut Nyak Dien
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5800871249320691657
+--- !u!114 &-4340886123956170952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,8 +92,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5964813873707173077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03ac66de5f2ebb4a9b1b4206da7720f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5624e03480c93764d8ec62dc6132cff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  shield: 0
+  maxEnergy: 3
+  currentEnergy: 3
+  maxShield: 0
+  currentShield: 0
+  maxHealth: 100
+  currentHealth: 0
+  energyText: {fileID: 0}
+  shieldText: {fileID: 0}
+  healthText: {fileID: 0}
