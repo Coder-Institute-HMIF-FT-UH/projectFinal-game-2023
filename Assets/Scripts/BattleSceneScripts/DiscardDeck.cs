@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class DiscardDeck : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject drawDeck;
+    public GameObject discardDeck;
+    public List<GameObject> discardDeckCards;
 
-    // Update is called once per frame
-    void Update()
+    public void HandCardToDiscard(GameObject handCard)
     {
-        
+        discardDeckCards.Add(handCard);
     }
 }

@@ -27,6 +27,7 @@ public class GameplaySystem : MonoBehaviour
             //method beberapa serangan musuh (random.range + switch case)
             //isyurturn = true
             //invoke 3 detik, method 5 card dari draw deck ke (handpool)
+            //jika draw deck kosong, yang dari discard deck kasih draw deck
         }
     }
 
@@ -45,6 +46,7 @@ public class GameplaySystem : MonoBehaviour
                 int randomIndex = Random.Range(0, drawDeckScript.drawDeckCards.Count);
                 GameObject randomObject = drawDeckScript.drawDeckCards[randomIndex];
                 handDeckCards.Add(randomObject);
+                discardDeckScript.discardDeckCards.Add(randomObject);
                 drawDeckScript.drawDeckCards.RemoveAt(randomIndex); // Remove the object from the source list to avoid duplicates.
             }
             foreach (var gameObject in handDeckCards)
@@ -55,7 +57,8 @@ public class GameplaySystem : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("List Dari Draw Deck Kurang Dari 5");
+            Debug.LogWarning("List Dari Draw Deck Kurang Dari 5, mengambil dari discard deck");
+            drawDeckScript.drawDeckCards.AddRange(discardDeckScript.discardDeckCards);
         }
     }
 }

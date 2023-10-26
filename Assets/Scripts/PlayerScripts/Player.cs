@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     public void ApplyBuff(int buffValue)
     {
         // Implement buff logic here
+        Debug.Log("buff sendiri");
     }
 
     public void TakeDamage(int damage)

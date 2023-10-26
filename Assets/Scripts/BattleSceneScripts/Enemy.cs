@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public int maxHealth = 100;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
 
     private void Start()
     {
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     public void ApplyDebuff(int debuffValue)
     {
         //debuff logic
+        Debug.Log("Debuff musuh");
     }
 
     private void Die()

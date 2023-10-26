@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4842191078243751518}
   - component: {fileID: 3226845824833324319}
   - component: {fileID: 2126790155187924133}
-  - component: {fileID: -613896809148253725}
   - component: {fileID: 1448846387894306288}
   m_Layer: 0
   m_Name: Bertahan
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,18 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-613896809148253725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4842191078243751517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99c7a8a8922c154c921a25ea0f1f81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1448846387894306288
 MonoBehaviour:
   m_ObjectHideFlags: 0
