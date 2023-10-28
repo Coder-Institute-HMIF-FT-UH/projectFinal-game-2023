@@ -148,3 +148,5 @@ MonoBehaviour:
   energyCost: 1
   cardType: 0
   player: {fileID: 0}
+  buffVariation: 0
+  debuffVariation: 0

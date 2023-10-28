@@ -10,6 +10,20 @@ public enum CardType
     Debuff
 }
 
+public enum BuffVariation
+{
+    Buff1,
+    Buff2,
+    // Add more variations as needed
+}
+
+public enum DebuffVariation
+{
+    Debuff1,
+    Debuff2,
+    // Add more variations as needed
+}
+
 public class CardLogic : MonoBehaviour
 {
     public int value;
@@ -17,6 +31,8 @@ public class CardLogic : MonoBehaviour
     public CardType cardType;
 
     public Player player; // Reference to the Player object.
+    public BuffVariation buffVariation; // Variation for Buff cards
+    public DebuffVariation debuffVariation; // Variation for Debuff cards
 
     private Vector3 defaultPosition;
     private Vector3 touchStartPos;
@@ -48,18 +64,46 @@ public class CardLogic : MonoBehaviour
             case CardType.Buff:
                 if (player.UseEnergy(energyCost))
                 {
-                    player.ApplyBuff(value);
+                    ApplyBuff(enemy, buffVariation);
                 }
                 break;
             case CardType.Debuff:
                 if (player.UseEnergy(energyCost))
                 {
-                    enemy.ApplyDebuff(value);
+                    ApplyDebuff(enemy, debuffVariation);
                 }
                 break;
             default:
                 Debug.LogWarning("Unknown card type: " + cardType);
                 break;
+        }
+    }
+
+    private void ApplyBuff(Enemy enemy, BuffVariation variation)
+    {
+        switch (variation)
+        {
+            case BuffVariation.Buff1:
+                // Implement Buff1 logic
+                break;
+            case BuffVariation.Buff2:
+                // Implement Buff2 logic
+                break;
+                // Add more variations as needed
+        }
+    }
+
+    private void ApplyDebuff(Enemy enemy, DebuffVariation variation)
+    {
+        switch (variation)
+        {
+            case DebuffVariation.Debuff1:
+                // Implement Debuff1 logic
+                break;
+            case DebuffVariation.Debuff2:
+                // Implement Debuff2 logic
+                break;
+                // Add more variations as needed
         }
     }
 
