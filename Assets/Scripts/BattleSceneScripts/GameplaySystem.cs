@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameplaySystem : MonoBehaviour
 {
-    [SerializeField] public int energy;
     public List<GameObject> handDeckCards;
     public DrawDeck drawDeckScript;
     public DiscardDeck discardDeckScript; 

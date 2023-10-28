@@ -63,7 +63,7 @@ public class NodeCode : MonoBehaviour
             EnableNextNodes(nextNode1);
             EnableNextNodes(nextNode2);
             EnableNextNodes(nextNode3);
-            Invoke("ReturnToPreviousScene", 5f);
+            //Invoke("ReturnToPreviousScene", 5f);
         }
     }
 
