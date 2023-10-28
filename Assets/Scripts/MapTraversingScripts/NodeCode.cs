@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,32 +6,36 @@ public class NodeCode : MonoBehaviour
     [SerializeField] public int nodeTypeRandom;
     [SerializeField] public string battleScene = "BattleScene";
     [SerializeField] public string restAreaScene = "RestAreaScene";
-    private bool hasLoadedScene = false;
+  
+
+    [SerializeField] public NodeCode neighborNode1, neighborNode2, nextNode1, nextNode2, nextNode3;
+    [SerializeField] public bool hasLoadedScene;
 
     // scene sebelumnya
     private string previousScene;
 
     // warna asli
-    private Color originalColor;
+    public Color originalColor;
 
 
     void Start()
     {
+        //hasLoadedScene = true;
         nodeTypeRandom = Random.Range(2, 4);
 
         // Warna Node
         if (PlayerPrefs.GetInt(name) == 1)
         {
-            GetComponent<SpriteRenderer>().color = Color.green; 
+            GetComponent<SpriteRenderer>().color = Color.green;
         }
 
         // Simpan warna asli
         originalColor = GetComponent<SpriteRenderer>().color;
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
-        if (!hasLoadedScene)
+        if (hasLoadedScene) // cek apakah node sudah terpilih dan scene sudah dimuat
         {
             // Simpan adegan sebelumnya
             previousScene = SceneManager.GetActiveScene().name;
@@ -41,28 +43,50 @@ public class NodeCode : MonoBehaviour
             if (nodeTypeRandom == 2)
             {
                 SceneManager.LoadScene(battleScene, LoadSceneMode.Single);
-                hasLoadedScene = true;
+
             }
             else
             {
                 SceneManager.LoadScene(restAreaScene, LoadSceneMode.Single);
-                hasLoadedScene = true;
+
             }
 
             // Node stay color
-            GetComponent<SpriteRenderer>().color = Color.black; 
+            GetComponent<SpriteRenderer>().color = Color.black;
             PlayerPrefs.SetInt(name, 1);
 
-            // coba pindah otomatis ke adegan awal setelah 10 detik memilih node
-            Invoke("ReturnToPreviousScene", 10);
 
+            hasLoadedScene = false;
+            //disini tetangga dan next
+            DisableNeighborNodes(neighborNode1);
+            DisableNeighborNodes(neighborNode2);
+            EnableNextNodes(nextNode1);
+            EnableNextNodes(nextNode2);
+            EnableNextNodes(nextNode3);
+            Invoke("ReturnToPreviousScene", 5f);
+        }
+    }
+
+    //function untuk enable dan disable node
+    public void EnableNextNodes(NodeCode nextNode)
+    {
+        if (nextNode != null)
+        {
+            nextNode.hasLoadedScene = true;
+        }
+    }
+
+    public void DisableNeighborNodes(NodeCode neighborNode)
+    {
+        if (neighborNode != null)
+        {
+            neighborNode.hasLoadedScene = false;
         }
     }
 
     // Fungsi agar kita dapat kembali ke scane sebelumnya
-    void ReturnToPreviousScene()
+    private void ReturnToPreviousScene()
     {
         SceneManager.LoadScene(previousScene, LoadSceneMode.Single);
-
     }
 }
