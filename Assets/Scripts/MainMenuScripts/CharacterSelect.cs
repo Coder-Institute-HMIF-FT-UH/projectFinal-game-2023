@@ -4,34 +4,20 @@ using UnityEngine;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public GameObject characterA;
-    public GameObject characterB;
-    public GameObject characterC;
     public SceneMoving sceneMoving;
+    private CharacterId characterid;
 
-    public int selectedCharacter = 0;
+    private void Start()
+    {
+        characterid = GameObject.FindObjectOfType<CharacterId>();
+    }
     public void selectchar(int choosenSelectedCharacter)
     {
-        selectedCharacter = choosenSelectedCharacter;
+        characterid.selectedCharId = choosenSelectedCharacter;
     }
 
     public void StartGamePreparation()
     {
-        if (selectedCharacter == 0)
-        {
-            Destroy(characterB);
-            Destroy(characterC);
-        }
-        else if (selectedCharacter == 1)
-        {
-            Destroy(characterA);
-            Destroy(characterC);
-        }
-        else
-        {
-            Destroy(characterA);
-            Destroy(characterB);
-        }
         sceneMoving.LoadMapTraversingScene();
     }
 }

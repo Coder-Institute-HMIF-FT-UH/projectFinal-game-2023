@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82772364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8, y: 0, z: 0.000010966536}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 714983207}
@@ -166,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 145256400}
   - component: {fileID: 145256401}
+  - component: {fileID: 145256402}
   m_Layer: 0
   m_Name: Final_Boss
   m_TagString: Untagged
@@ -181,7 +182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145256399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28, y: 0, z: 0}
+  m_LocalPosition: {x: 34, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2014551407}
@@ -238,6 +239,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &145256402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145256399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20ac70c55455254b9d28a4c53224b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeTypeRandom: 0
+  battleScene: BattleScene
+  restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 145256399}
+  neighborNode1: {fileID: 0}
+  neighborNode2: {fileID: 0}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
+  nextNode3: {fileID: 0}
+  hasLoadedScene: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &238460039
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,8 +279,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &238460040
-RectTransform:
+--- !u!4 &238460040
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -271,11 +296,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &247861261
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247861261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -676, y: 0, z: 0}
+  m_LocalPosition: {x: 30, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1114465954}
@@ -340,10 +360,12 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
-  neighborNode1: {fileID: 0}
-  neighborNode2: {fileID: 0}
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
+  neighborNode1: {fileID: 701513490}
+  neighborNode2: {fileID: 1900039545}
   nextNode1: {fileID: 0}
-  nextNode2: {fileID: 0}
+  nextNode2: {fileID: 145256402}
   nextNode3: {fileID: 0}
   hasLoadedScene: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
@@ -425,7 +447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250980672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -579, y: 3, z: 0}
+  m_LocalPosition: {x: 26, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910031683}
@@ -462,6 +484,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1912327911}
   neighborNode2: {fileID: 1148778134}
   nextNode1: {fileID: 701513490}
@@ -547,7 +571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345754451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -288, y: 0, z: 0}
+  m_LocalPosition: {x: 14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1640144558}
@@ -584,6 +608,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 0}
   neighborNode2: {fileID: 0}
   nextNode1: {fileID: 0}
@@ -669,7 +695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366171814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -288, y: -3, z: 0}
+  m_LocalPosition: {x: 14, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1640144558}
@@ -706,6 +732,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 0}
   neighborNode2: {fileID: 0}
   nextNode1: {fileID: 0}
@@ -805,7 +833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 1
   minPositionX: 0
-  maxPositionX: 22
+  maxPositionX: 30
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -890,7 +918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530435566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94, y: -3, z: 0.000010966536}
+  m_LocalPosition: {x: 6, y: -3, z: 0.000010966536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238460040}
@@ -927,6 +955,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1177871431}
   neighborNode2: {fileID: 1075934071}
   nextNode1: {fileID: 0}
@@ -1012,7 +1042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637355630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -482, y: -3, z: 0}
+  m_LocalPosition: {x: 22, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 990059916}
@@ -1049,6 +1079,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1868281405}
   neighborNode2: {fileID: 1532427252}
   nextNode1: {fileID: 0}
@@ -1171,6 +1203,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1738459336}
   neighborNode2: {fileID: 1109141689}
   nextNode1: {fileID: 0}
@@ -1256,7 +1290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701513487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -676, y: 3, z: 0}
+  m_LocalPosition: {x: 30, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1114465954}
@@ -1293,10 +1327,12 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
-  neighborNode1: {fileID: 0}
-  neighborNode2: {fileID: 0}
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
+  neighborNode1: {fileID: 247861264}
+  neighborNode2: {fileID: 1900039545}
   nextNode1: {fileID: 0}
-  nextNode2: {fileID: 0}
+  nextNode2: {fileID: 145256402}
   nextNode3: {fileID: 0}
   hasLoadedScene: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1378,7 +1414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714983206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 3, z: 0}
+  m_LocalPosition: {x: -2, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82772365}
@@ -1466,6 +1502,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1155682418}
   neighborNode2: {fileID: 741797291}
   nextNode1: {fileID: 1738459336}
@@ -1500,7 +1538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741797287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -3, z: 0}
+  m_LocalPosition: {x: -2, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82772365}
@@ -1588,6 +1626,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 714983211}
   neighborNode2: {fileID: 1155682418}
   nextNode1: {fileID: 0}
@@ -1622,7 +1662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745623442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -191, y: 0.09999999, z: 0}
+  m_LocalPosition: {x: 10, y: 0.09999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1210587194}
@@ -1659,6 +1699,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 979223749}
   neighborNode2: {fileID: 1806202700}
   nextNode1: {fileID: 2128552890}
@@ -1733,8 +1775,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &910031683
-RectTransform:
+--- !u!4 &910031683
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1750,11 +1792,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &919084668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,7 +1919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979223746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -191, y: 3, z: 0}
+  m_LocalPosition: {x: 10, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1210587194}
@@ -1919,6 +1956,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 745623445}
   neighborNode2: {fileID: 1806202700}
   nextNode1: {fileID: 2128552890}
@@ -1993,8 +2032,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &990059916
-RectTransform:
+--- !u!4 &990059916
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2010,11 +2049,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1013153518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,7 +2158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075934068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94, y: 0, z: 0}
+  m_LocalPosition: {x: 6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238460040}
@@ -2161,6 +2195,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1177871431}
   neighborNode2: {fileID: 530435569}
   nextNode1: {fileID: 979223749}
@@ -2235,8 +2271,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1094182776
-RectTransform:
+--- !u!4 &1094182776
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2252,11 +2288,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1109141686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2352,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1738459336}
   neighborNode2: {fileID: 691607211}
   nextNode1: {fileID: 1177871431}
@@ -2395,8 +2428,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1114465954
-RectTransform:
+--- !u!4 &1114465954
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2412,11 +2445,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1117469244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,7 +2538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148778131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -579, y: -3, z: 0}
+  m_LocalPosition: {x: 26, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910031683}
@@ -2547,6 +2575,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 250980675}
   neighborNode2: {fileID: 1912327911}
   nextNode1: {fileID: 0}
@@ -2634,7 +2664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155682414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82772365}
@@ -2714,6 +2744,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 714983211}
   neighborNode2: {fileID: 741797291}
   nextNode1: {fileID: 1738459336}
@@ -2752,6 +2784,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 0}
   neighborNode2: {fileID: 0}
   nextNode1: {fileID: 0}
@@ -2786,7 +2820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177871428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94, y: 3, z: 0}
+  m_LocalPosition: {x: 6, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238460040}
@@ -2823,6 +2857,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1075934071}
   neighborNode2: {fileID: 530435569}
   nextNode1: {fileID: 979223749}
@@ -2908,7 +2944,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197377915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -385, y: -3, z: 0}
+  m_LocalPosition: {x: 18, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1094182776}
@@ -2945,6 +2981,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 2113324763}
   neighborNode2: {fileID: 1862147032}
   nextNode1: {fileID: 0}
@@ -3019,8 +3057,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1210587194
-RectTransform:
+--- !u!4 &1210587194
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3036,11 +3074,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1442858500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3147,7 +3180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532427249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -482, y: 0, z: 0}
+  m_LocalPosition: {x: 22, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 990059916}
@@ -3184,6 +3217,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1868281405}
   neighborNode2: {fileID: 637355633}
   nextNode1: {fileID: 250980675}
@@ -3258,8 +3293,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1640144558
-RectTransform:
+--- !u!4 &1640144558
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3275,11 +3310,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1653051555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,8 +3326,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1653051556
-RectTransform:
+--- !u!4 &1653051556
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3313,11 +3343,6 @@ RectTransform:
   m_Father: {fileID: 2014551407}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1738459332
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,6 +3458,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1109141689}
   neighborNode2: {fileID: 691607211}
   nextNode1: {fileID: 1177871431}
@@ -3467,7 +3494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806202697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -191, y: -3.0299995, z: 0}
+  m_LocalPosition: {x: 10, y: -3.0299995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1210587194}
@@ -3504,6 +3531,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 979223749}
   neighborNode2: {fileID: 745623445}
   nextNode1: {fileID: 0}
@@ -3589,7 +3618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862147029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -385, y: 0, z: 0}
+  m_LocalPosition: {x: 18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1094182776}
@@ -3626,6 +3655,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 2113324763}
   neighborNode2: {fileID: 1197377918}
   nextNode1: {fileID: 1868281405}
@@ -3711,7 +3742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868281402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -482, y: 3, z: 0}
+  m_LocalPosition: {x: 22, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 990059916}
@@ -3748,6 +3779,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1532427252}
   neighborNode2: {fileID: 637355633}
   nextNode1: {fileID: 250980675}
@@ -3833,7 +3866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900039542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -676, y: -3, z: 0}
+  m_LocalPosition: {x: 30, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1114465954}
@@ -3870,10 +3903,12 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
-  neighborNode1: {fileID: 0}
-  neighborNode2: {fileID: 0}
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
+  neighborNode1: {fileID: 701513490}
+  neighborNode2: {fileID: 247861264}
   nextNode1: {fileID: 0}
-  nextNode2: {fileID: 0}
+  nextNode2: {fileID: 145256402}
   nextNode3: {fileID: 0}
   hasLoadedScene: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
@@ -3955,7 +3990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912327908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -579, y: 0, z: 0}
+  m_LocalPosition: {x: 26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910031683}
@@ -3992,6 +4027,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 250980675}
   neighborNode2: {fileID: 1148778134}
   nextNode1: {fileID: 701513490}
@@ -4164,7 +4201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113324760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -385, y: 3, z: 0}
+  m_LocalPosition: {x: 18, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1094182776}
@@ -4201,6 +4238,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 1862147032}
   neighborNode2: {fileID: 1197377918}
   nextNode1: {fileID: 1868281405}
@@ -4286,7 +4325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128552887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -288, y: 3, z: 0}
+  m_LocalPosition: {x: 14, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1640144558}
@@ -4323,6 +4362,8 @@ MonoBehaviour:
   nodeTypeRandom: 0
   battleScene: BattleScene
   restAreaScene: RestAreaScene
+  bossFightScene: BossFightScene
+  finalBoss: {fileID: 0}
   neighborNode1: {fileID: 0}
   neighborNode2: {fileID: 0}
   nextNode1: {fileID: 0}

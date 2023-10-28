@@ -6,6 +6,8 @@ public class NodeCode : MonoBehaviour
     [SerializeField] public int nodeTypeRandom;
     [SerializeField] public string battleScene = "BattleScene";
     [SerializeField] public string restAreaScene = "RestAreaScene";
+    [SerializeField] public string bossFightScene = "BossFightScene";
+    [SerializeField] public GameObject finalBoss;
   
 
     [SerializeField] public NodeCode neighborNode1, neighborNode2, nextNode1, nextNode2, nextNode3;
@@ -22,6 +24,11 @@ public class NodeCode : MonoBehaviour
     {
         //hasLoadedScene = true;
         nodeTypeRandom = Random.Range(2, 4);
+        //pengecualian final node
+        if (finalBoss)
+        {
+            GetComponent<NodeCode>().nodeTypeRandom = 9;
+        }
 
         // Warna Node
         if (PlayerPrefs.GetInt(name) == 1)
@@ -45,10 +52,13 @@ public class NodeCode : MonoBehaviour
                 SceneManager.LoadScene(battleScene, LoadSceneMode.Single);
 
             }
-            else
+            else if (nodeTypeRandom == 3)
             {
                 SceneManager.LoadScene(restAreaScene, LoadSceneMode.Single);
-
+            }
+            else
+            {
+                SceneManager.LoadScene(bossFightScene, LoadSceneMode.Single);
             }
 
             // Node stay color
