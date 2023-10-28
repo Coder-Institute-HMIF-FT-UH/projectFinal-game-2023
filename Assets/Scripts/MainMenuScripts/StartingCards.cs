@@ -8,9 +8,9 @@ public class StartingCards : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+/*        DontDestroyOnLoad(gameObject);
         StartingDeckInit();
-    }
+*/    }
 
     void Update()
     {
