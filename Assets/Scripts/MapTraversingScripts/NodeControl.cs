@@ -5,13 +5,18 @@ using UnityEngine;
 public class NodeControl : MonoBehaviour
 {
     [SerializeField] public GameObject[] nodes;
-    
-    void Start()
+    private static GameObject instance;
+    private void Start()
     {
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
+
+        if (instance == null)
+            instance = gameObject;
+        else
+            Destroy(gameObject);
     }
 
-    void Update()
+    private void Update()
     {
         
     }
