@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1247762745624516845}
   - component: {fileID: 1247762745624516818}
-  - component: {fileID: 6256691312852920383}
+  - component: {fileID: -7764249324755464291}
   m_Layer: 0
   m_Name: Hasanuddin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6256691312852920383
+--- !u!114 &-7764249324755464291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,8 +92,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247762745624516819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03ac66de5f2ebb4a9b1b4206da7720f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5624e03480c93764d8ec62dc6132cff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  shield: 0
+  maxEnergy: 3
+  currentEnergy: 3
+  maxShield: 0
+  currentShield: 0
+  maxHealth: 100
+  currentHealth: 0
+  energyText: {fileID: 0}
+  shieldText: {fileID: 0}
+  healthText: {fileID: 0}

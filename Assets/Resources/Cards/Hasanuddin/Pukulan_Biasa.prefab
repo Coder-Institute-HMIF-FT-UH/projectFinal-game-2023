@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4842191078243751518}
   - component: {fileID: 3226845824833324319}
   - component: {fileID: 8973050630276420779}
-  - component: {fileID: 2626312124193766330}
+  - component: {fileID: -6342477312649397312}
   m_Layer: 0
   m_Name: Pukulan_Biasa
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4842191078243751517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c64b5c3b0ecd7f54d9eb5e527c83ed12, type: 3}
   m_Name: 
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2626312124193766330
+--- !u!114 &-6342477312649397312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4842191078243751517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99c7a8a8922c154c921a25ea0f1f81c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c309b49b61ddac41a5db77198b20aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 10
+  energyCost: 1
+  cardType: 0
+  player: {fileID: 0}

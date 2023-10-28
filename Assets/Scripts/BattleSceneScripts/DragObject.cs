@@ -8,15 +8,22 @@ public class DragObject : MonoBehaviour
     private Vector3 objectStartPos;
     private bool isDragging = false;
 
-    private Vector3 defaultPosition; // Default position calculated at runtime
+    private Vector3 defaultPosition;
+    [SerializeField] private CardLogic attachedCard;
 
     private void Start()
     {
-        defaultPosition = transform.position; // Store the initial position as the default
+        defaultPosition = transform.position;
+        attachedCard = GetComponent<CardLogic>();
     }
 
     private void OnMouseDown()
     {
+        if (attachedCard != null)
+        {
+            attachedCard.ApplyCardEffect(null); // You can pass null or an appropriate enemy here.
+        }
+
         if (Input.touchCount > 0)
         {
             touchStartPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -32,6 +39,7 @@ public class DragObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        // Add this method to handle the drag behavior.
         if (isDragging)
         {
             Vector3 currentPos;
@@ -54,7 +62,8 @@ public class DragObject : MonoBehaviour
         if (isDragging)
         {
             isDragging = false;
-            transform.position = defaultPosition; // Return to the calculated default position
+            transform.position = defaultPosition;
+            attachedCard = null;
         }
     }
 }

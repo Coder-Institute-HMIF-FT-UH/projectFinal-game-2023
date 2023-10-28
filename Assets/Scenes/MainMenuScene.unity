@@ -2052,7 +2052,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9e7301fe0fddb42af1b27580643a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDeck: []
+  cardDeck:
+  - {fileID: 4842191078243751517, guid: 3bfb9e9cdf217d84bae4ba3c7136ba45, type: 3}
+  - {fileID: 4842191078243751517, guid: 3bfb9e9cdf217d84bae4ba3c7136ba45, type: 3}
+  - {fileID: 4842191078243751517, guid: 3bfb9e9cdf217d84bae4ba3c7136ba45, type: 3}
+  - {fileID: 4842191078243751517, guid: 3bfb9e9cdf217d84bae4ba3c7136ba45, type: 3}
+  - {fileID: 4842191078243751517, guid: 3bfb9e9cdf217d84bae4ba3c7136ba45, type: 3}
+  - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
+  - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
+  - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
+  - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
+  - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
+  - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
+  - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
+  - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
+  - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
+  - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
 --- !u!1 &933729344
 GameObject:
   m_ObjectHideFlags: 0
