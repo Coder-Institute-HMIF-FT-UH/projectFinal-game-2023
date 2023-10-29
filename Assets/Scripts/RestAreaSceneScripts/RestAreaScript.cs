@@ -19,12 +19,12 @@ public class RestAreaScript : MonoBehaviour
     {
         player.currentHealth += pertambahanHP;
         sceneMovingScript.LoadMapTraversingScene();
-        inventoryCardScripts.AddingCardReward();
+        //inventoryCardScripts.AddingCardReward();
     }
 
     public void LanjutPerjalanan()
     {
         sceneMovingScript.LoadMapTraversingScene();
-        inventoryCardScripts.AddingCardReward();
+        //inventoryCardScripts.AddingCardReward();
     }
 }

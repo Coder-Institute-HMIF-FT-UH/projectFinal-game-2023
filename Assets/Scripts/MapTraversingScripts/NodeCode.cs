@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class NodeCode : MonoBehaviour
 {
+    [SerializeField] public Sprite[] nodeSprites;
     [SerializeField] public int nodeTypeRandom;
     [SerializeField] public string battleScene = "BattleScene";
     [SerializeField] public string restAreaScene = "RestAreaScene";
@@ -13,15 +14,15 @@ public class NodeCode : MonoBehaviour
     [SerializeField] public NodeCode neighborNode1, neighborNode2, nextNode1, nextNode2, nextNode3;
     [SerializeField] public bool hasLoadedScene;
 
-    // scene sebelumnya
-    private string previousScene;
 
     // warna asli
     public Color originalColor;
+    private SpriteRenderer spriteRenderer;
 
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         //hasLoadedScene = true;
         nodeTypeRandom = Random.Range(2, 4);
         //pengecualian final node
@@ -30,11 +31,20 @@ public class NodeCode : MonoBehaviour
             GetComponent<NodeCode>().nodeTypeRandom = 9;
         }
 
-        // Warna Node
-        if (PlayerPrefs.GetInt(name) == 1)
+        // Change the sprite based on nodeTypeRandom
+        if (nodeTypeRandom == 2)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
+            spriteRenderer.sprite = nodeSprites[0];
         }
+        else if (nodeTypeRandom == 3)
+        {
+            spriteRenderer.sprite = nodeSprites[1];
+        }
+        else
+        {
+            spriteRenderer.sprite = nodeSprites[2];
+        }
+
 
         // Simpan warna asli
         originalColor = GetComponent<SpriteRenderer>().color;
@@ -44,9 +54,6 @@ public class NodeCode : MonoBehaviour
     {
         if (hasLoadedScene) // cek apakah node sudah terpilih dan scene sudah dimuat
         {
-            // Simpan adegan sebelumnya
-            previousScene = SceneManager.GetActiveScene().name;
-
             if (nodeTypeRandom == 2)
             {
                 SceneManager.LoadScene(battleScene, LoadSceneMode.Single);
@@ -63,7 +70,6 @@ public class NodeCode : MonoBehaviour
 
             // Node stay color
             GetComponent<SpriteRenderer>().color = Color.black;
-            PlayerPrefs.SetInt(name, 1);
 
 
             hasLoadedScene = false;
@@ -92,11 +98,5 @@ public class NodeCode : MonoBehaviour
         {
             neighborNode.hasLoadedScene = false;
         }
-    }
-
-    // Fungsi agar kita dapat kembali ke scane sebelumnya
-    private void ReturnToPreviousScene()
-    {
-        SceneManager.LoadScene(previousScene, LoadSceneMode.Single);
     }
 }
