@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -608149424225209016}
   m_Layer: 0
   m_Name: Tebasan_Putar
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +148,5 @@ MonoBehaviour:
   energyCost: 1
   cardType: 0
   player: {fileID: 0}
+  buffVariation: 0
+  debuffVariation: 0

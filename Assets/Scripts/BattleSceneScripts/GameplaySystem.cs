@@ -7,14 +7,17 @@ public class GameplaySystem : MonoBehaviour
     public List<GameObject> handDeckCards;
     public DrawDeck drawDeckScript;
     public DiscardDeck discardDeckScript; 
-    public Transform spawnPoint; 
-    public float spacing = 1.0f; 
+    public Transform[] spawnPoints; 
 
+    public Player player;
+    public Enemy enemy;
 
     [SerializeField] private bool isYourTurn; 
 
     void Start()
     {
+        player = GameObject.FindObjectOfType<Player>();
+        enemy = GameObject.FindObjectOfType<Enemy>();
         isYourTurn = true;
         DrawCardToHand();
     }
@@ -23,16 +26,25 @@ public class GameplaySystem : MonoBehaviour
     {
         if (!isYourTurn)
         {
-            //method beberapa serangan musuh (random.range + switch case)
+            //kalau nd sampai 5 di drawdeck, dia reset duluan isi drawdeck
+            if (drawDeckScript.drawDeckCards.Count <= 4)
+            {
+                drawDeckScript.drawDeckCards.AddRange(discardDeckScript.discardDeckCards);
+                discardDeckScript.discardDeckCards.Clear();
+            }
+            //method beberapa serangan musuh (random.range + switch case) + invoke 1 detik
+            Invoke("RandomlySelectEnemyMove", 1f);
+            //invoke 3 detik, method 5 card dari draw deck ke (handpool) + invoke 1 detik
+            Invoke("DrawCardToHand", 1f);
             //isyurturn = true
-            //invoke 3 detik, method 5 card dari draw deck ke (handpool)
-            //jika draw deck kosong, yang dari discard deck kasih draw deck
+            isYourTurn = true;  
         }
     }
 
     public void EndTurn()
     {
         isYourTurn = false;
+        CleaningInstantiateCard();
     }
 
     public void DrawCardToHand()
@@ -47,17 +59,47 @@ public class GameplaySystem : MonoBehaviour
                 handDeckCards.Add(randomObject);
                 discardDeckScript.discardDeckCards.Add(randomObject);
                 drawDeckScript.drawDeckCards.RemoveAt(randomIndex); // Remove the object from the source list to avoid duplicates.
+
+                // Instantiate the object and set its position based on the spawnPoints
+                GameObject instantiatedObject = Instantiate(randomObject, spawnPoints[i].position, Quaternion.identity);
             }
-            foreach (var gameObject in handDeckCards)
-            {
-                Instantiate(gameObject, spawnPoint.position, Quaternion.identity);
-                spawnPoint.position += new Vector3(spacing, 0, 0);
-            }
+
+
         }
         else
         {
             Debug.LogWarning("List Dari Draw Deck Kurang Dari 5, mengambil dari discard deck");
             drawDeckScript.drawDeckCards.AddRange(discardDeckScript.discardDeckCards);
+            discardDeckScript.discardDeckCards.Clear();
+        }
+    }
+
+    public void CleaningInstantiateCard()
+    {
+        // Find all objects with the specified tag in the scene
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("Card");
+
+        // Iterate through the tagged objects and destroy them
+        foreach (GameObject obj in taggedObjects)
+        {
+            Destroy(obj);
+        }
+    }
+
+    public void RandomlySelectEnemyMove()
+    {
+        int randomMove = Random.Range(1, 4); // Generate a random number between 1 and 3
+        switch (randomMove)
+        {
+            case 1:
+                enemy.AttackPlayer(player, 10); // Choose the first moveset (attack)
+                break;
+            case 2:
+                enemy.GainShield(20); // Choose the second moveset (gain shield)
+                break;
+            case 3:
+                enemy.HealingSelf(5); 
+                break;
         }
     }
 }
