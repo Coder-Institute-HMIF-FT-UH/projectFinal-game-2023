@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EventScene.unity
     guid: 77265f945c601e74f8d2d5f62a520483
   - enabled: 1
+    path: Assets/Scenes/PostLastBattleScene.unity
+    guid: 1e896543a1ae5674fa2f2d0911cc5d73
+  - enabled: 1
     path: Assets/Scenes/ShopScene.unity
     guid: c165927fc6e681941a22b1687f7d53f2
   m_configObjects: {}

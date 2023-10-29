@@ -6,10 +6,22 @@ public class StartingCards : MonoBehaviour
 {
     [SerializeField] public List<GameObject> cardDeck; //Kartu Inventory
     [SerializeField] private List<GameObject> loadedCards = new List<GameObject>(); // Stores the loaded prefabs
-
+    private static GameObject instance;
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // Replace the old instance with the new one
+            Destroy(instance);
+
+            instance = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
         LoadCardPrefabs();
     }
 

@@ -16,9 +16,22 @@ public class Player : MonoBehaviour
     public Text shieldText;
     public Text healthText;
 
+    private static GameObject instance;
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // Replace the old instance with the new one
+            Destroy(instance);
+
+            instance = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
         currentEnergy = maxEnergy;
         currentShield = 0;
     }
