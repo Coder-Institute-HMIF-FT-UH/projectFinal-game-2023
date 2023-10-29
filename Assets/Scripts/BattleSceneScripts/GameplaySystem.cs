@@ -45,6 +45,7 @@ public class GameplaySystem : MonoBehaviour
     {
         isYourTurn = false;
         CleaningInstantiateCard();
+        player.ReplenishEnergy(player.maxEnergy);
     }
 
     public void DrawCardToHand()
@@ -101,5 +102,6 @@ public class GameplaySystem : MonoBehaviour
                 enemy.HealingSelf(5); 
                 break;
         }
+        Debug.Log(randomMove);
     }
 }

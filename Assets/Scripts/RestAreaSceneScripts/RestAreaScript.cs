@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class RestAreaScript : MonoBehaviour
 {
-    [SerializeField] public int pertambahanHP; 
+    [SerializeField] public int pertambahanHP;
+
+    public Player player;
+    public SceneMoving sceneMovingScript;
+    public StartingCards inventoryCardScripts;
     void Start()
     {
-        
+        player = GameObject.FindObjectOfType<Player>();
+        inventoryCardScripts = GameObject.FindObjectOfType<StartingCards>();
     }
 
     public void Istirahat()
     {
-        //Character Bertambah darahnya
+        player.currentHealth += pertambahanHP;
+        sceneMovingScript.LoadMapTraversingScene();
+        inventoryCardScripts.AddingCardReward();
     }
 
     public void LanjutPerjalanan()
     {
-        //Langsung keluar tanpa ada pertambahan darah
+        sceneMovingScript.LoadMapTraversingScene();
+        inventoryCardScripts.AddingCardReward();
     }
 }

@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: maxShield
       value: 999
       objectReference: {fileID: 0}
+    - target: {fileID: -4340886123956170952, guid: 77a31649dbad1944fa7e40ac748f479a, type: 3}
+      propertyPath: currentHealth
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5800871249320691657, guid: 77a31649dbad1944fa7e40ac748f479a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -844,6 +848,10 @@ PrefabInstance:
     - target: {fileID: 7366266102599939281, guid: 24cfeaecc1578cc428750ec5ee705553, type: 3}
       propertyPath: maxShield
       value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366266102599939281, guid: 24cfeaecc1578cc428750ec5ee705553, type: 3}
+      propertyPath: currentHealth
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8602978492687323924, guid: 24cfeaecc1578cc428750ec5ee705553, type: 3}
       propertyPath: m_Enabled
@@ -2105,7 +2113,6 @@ MonoBehaviour:
   - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
   - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
   - {fileID: 4842191078243751517, guid: 68124a4fc72ede34bb3d9886d1f80b77, type: 3}
-  - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
   - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
   - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
   - {fileID: 4842191078243751517, guid: 00aed8a630a0fd64ca57321ba7b8965c, type: 3}
@@ -4109,6 +4116,10 @@ PrefabInstance:
     - target: {fileID: -7764249324755464291, guid: 187e13bc528b50c408b64ed6386b77d2, type: 3}
       propertyPath: maxShield
       value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: -7764249324755464291, guid: 187e13bc528b50c408b64ed6386b77d2, type: 3}
+      propertyPath: currentHealth
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1247762745624516818, guid: 187e13bc528b50c408b64ed6386b77d2, type: 3}
       propertyPath: m_Enabled

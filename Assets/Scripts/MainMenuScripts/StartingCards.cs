@@ -5,49 +5,30 @@ using UnityEngine;
 public class StartingCards : MonoBehaviour
 {
     [SerializeField] public List<GameObject> cardDeck; //Kartu Inventory
+    [SerializeField] private List<GameObject> loadedCards = new List<GameObject>(); // Stores the loaded prefabs
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        //StartingDeckInit();
+        LoadCardPrefabs();
     }
 
-    void Update()
+    private void LoadCardPrefabs()
     {
-
-    }
-
-    public void StartingDeckInit()
-    {
-        // Load semua resource yang ada di Resources/Cards/Hasanuddin dan memasukkan kedalam array
-        Object[] cards = Resources.LoadAll("Cards/Hasanuddin", typeof(GameObject));
-
-        // Pastikan ada cukup kartu untuk diambil
-        if (cards.Length < 5)
+        // Check if we haven't loaded the cards yet
+        if (loadedCards.Count == 0)
         {
-            Debug.LogError("Not enough cards in the folder!");
-            return;
-        }
+            // Load all prefabs from the "Resources/Cards/Char1" folder
+            GameObject[] cardPrefabs = Resources.LoadAll<GameObject>("Cards/Hasanuddin");
 
-        List<int> selectedIndices = new List<int>(); // Menyimpan indeks yang sudah terpilih
-
-        // Ambil 5 kartu secara acak
-        for (int i = 0; i < 5; i++)
-        {
-            int randomIndex;
-
-            // Pastikan tidak mengambil kartu yang sama
-            do
+            if (cardPrefabs.Length > 0)
             {
-                randomIndex = Random.Range(0, cards.Length);
-            } while (selectedIndices.Contains(randomIndex));
-
-            // Menambahkan kartu acak ke list
-            GameObject card = cards[randomIndex] as GameObject;
-            cardDeck.Add(card);
-
-            // Menandai indeks yang sudah terpilih
-            selectedIndices.Add(randomIndex);
+                loadedCards.AddRange(cardPrefabs);
+            }
+            else
+            {
+                Debug.LogError("No card prefabs found in the 'Resources/Cards/Hasanuddin' folder.");
+            }
         }
     }
 
@@ -58,5 +39,17 @@ public class StartingCards : MonoBehaviour
     public void AddingCardReward()
     {
         //Menambah 1 kartu random ke list kartu inventory
+        if (loadedCards.Count > 0)
+        {
+            // Get a random index to select a random prefab from the loadedCards list
+            int randomIndex = Random.Range(0, loadedCards.Count);
+
+            // Add the selected prefab reference to the cardDeck list
+            cardDeck.Add(loadedCards[randomIndex]);
+        }
+        else
+        {
+            Debug.LogError("No card prefabs have been loaded from 'Resources/Cards/Hasanuddin'.");
+        }
     }
 }

@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     public void ReplenishEnergy(int energyAmount)
     {
-        currentEnergy += energyAmount;
+        currentEnergy = energyAmount;
         if (currentEnergy < 0)
         {
             currentEnergy = 0;
