@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MapTraversingScene.unity
     guid: 9294dc62154aa8040ad3b1a09cd953bb
   - enabled: 1
-    path: Assets/Scenes/BattleScene.unity
+    path: Assets/Scenes/BattleScene11.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/RestAreaScene.unity
@@ -21,12 +21,30 @@ EditorBuildSettings:
     path: Assets/Scenes/BossFightScene.unity
     guid: 4355dd842177fce41b997c6645cd6572
   - enabled: 1
-    path: Assets/Scenes/EventScene.unity
-    guid: 77265f945c601e74f8d2d5f62a520483
-  - enabled: 1
     path: Assets/Scenes/PostLastBattleScene.unity
     guid: 1e896543a1ae5674fa2f2d0911cc5d73
   - enabled: 1
-    path: Assets/Scenes/ShopScene.unity
-    guid: c165927fc6e681941a22b1687f7d53f2
+    path: Assets/Scenes/BattleScene00.unity
+    guid: 5049cac6715099d4c848eace63cbe19c
+  - enabled: 1
+    path: Assets/Scenes/BattleScene01.unity
+    guid: 158d868527684d6498b153bb39e96a71
+  - enabled: 1
+    path: Assets/Scenes/BattleScene02.unity
+    guid: 1044838864d25de4184182efc0d8d933
+  - enabled: 1
+    path: Assets/Scenes/BattleScene10.unity
+    guid: 7e6aaaa60031ff4498d919527a41e85c
+  - enabled: 1
+    path: Assets/Scenes/BattleScene12.unity
+    guid: 25f4494c039cd684a92ca841b20b1d32
+  - enabled: 1
+    path: Assets/Scenes/BattleScene20.unity
+    guid: 95928775b4b78c842839dcc41fedc18c
+  - enabled: 1
+    path: Assets/Scenes/BattleScene21.unity
+    guid: f4269cf4b96e3a9408eb16cfa626c312
+  - enabled: 1
+    path: Assets/Scenes/BattleScene22.unity
+    guid: 3bec8bd1c2b4dca439965a956bd18a1f
   m_configObjects: {}

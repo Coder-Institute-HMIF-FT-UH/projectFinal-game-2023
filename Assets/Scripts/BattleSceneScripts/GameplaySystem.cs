@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplaySystem : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameplaySystem : MonoBehaviour
 
     public Player player;
     public Enemy enemy;
+
+    public Text energyText;
 
     [SerializeField] private bool isYourTurn; 
 
@@ -24,6 +27,7 @@ public class GameplaySystem : MonoBehaviour
 
     void Update()
     {
+        energyText.text = player.currentEnergy.ToString(); //energy text ui update
         if (!isYourTurn)
         {
             //kalau nd sampai 5 di drawdeck, dia reset duluan isi drawdeck

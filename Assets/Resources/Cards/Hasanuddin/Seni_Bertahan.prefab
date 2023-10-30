@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4842191078243751519}
   - component: {fileID: 4842191078243751518}
-  - component: {fileID: 3226845824833324319}
   - component: {fileID: 4914381779659417797}
   - component: {fileID: 619129782896989155}
   m_Layer: 0
@@ -28,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4842191078243751517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9, y: -2.08, z: 0}
-  m_LocalScale: {x: 1.5, y: 2.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,27 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3226845824833324319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4842191078243751517}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c64b5c3b0ecd7f54d9eb5e527c83ed12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: c3ef69ce4190cf249bef2aa5c3195cfc, type: 2}
-  artworkImage: {fileID: 0}
-  nameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  costText: {fileID: 0}
-  attackText: {fileID: 0}
-  defendText: {fileID: 0}
-  buffText: {fileID: 0}
-  debuffText: {fileID: 0}
 --- !u!61 &4914381779659417797
 BoxCollider2D:
   m_ObjectHideFlags: 0

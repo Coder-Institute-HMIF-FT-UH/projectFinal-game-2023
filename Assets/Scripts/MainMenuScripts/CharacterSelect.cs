@@ -10,6 +10,7 @@ public class CharacterSelect : MonoBehaviour
     private void Start()
     {
         characterid = GameObject.FindObjectOfType<CharacterId>();
+        PlayerPrefs.DeleteKey("CameraPositionX"); //menghapus data camera dari maptraversing
     }
     public void selectchar(int choosenSelectedCharacter)
     {
