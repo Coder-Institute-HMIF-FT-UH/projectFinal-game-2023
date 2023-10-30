@@ -11,23 +11,25 @@ public class GameplaySystem : MonoBehaviour
     public Transform[] spawnPoints; 
 
     public Player player;
-    public Enemy enemy;
+    public Enemy enemy, enemy1, enemy2;
 
     public Text energyText;
+    public Text playerHpText, playerShieldText;
+    public Text enemyHpText, enemyShieldText, enemyHpText1, enemyShieldText1, enemyHpText2, enemyShieldText2;
 
     [SerializeField] private bool isYourTurn; 
 
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
-        enemy = GameObject.FindObjectOfType<Enemy>();
+        //enemy = GameObject.FindObjectOfType<Enemy>();
         isYourTurn = true;
         DrawCardToHand();
     }
 
     void Update()
     {
-        energyText.text = player.currentEnergy.ToString(); //energy text ui update
+        UpdateUI();//text ui update
         if (!isYourTurn)
         {
             //kalau nd sampai 5 di drawdeck, dia reset duluan isi drawdeck
@@ -106,6 +108,18 @@ public class GameplaySystem : MonoBehaviour
                 enemy.HealingSelf(5); 
                 break;
         }
-        Debug.Log(randomMove);
+    }
+
+    public void UpdateUI()
+    {
+        energyText.text = player.currentEnergy.ToString();
+        playerHpText.text = player.currentHealth.ToString();
+        playerShieldText.text = player.currentShield.ToString();
+        enemyHpText.text = enemy.currentHealth.ToString();
+        enemyShieldText.text = enemy.currentShield.ToString();
+        enemyHpText1.text = enemy1.currentHealth.ToString();
+        enemyShieldText1.text = enemy1.currentShield.ToString();
+        enemyHpText2.text = enemy2.currentHealth.ToString();
+        enemyShieldText2.text = enemy2.currentShield.ToString();
     }
 }
