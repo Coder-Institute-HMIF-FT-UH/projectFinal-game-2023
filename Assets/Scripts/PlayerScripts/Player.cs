@@ -89,13 +89,6 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        //klo mati balik ke main menu
+        //balik ke main menu
     }
-
-    //private void UpdateUI()
-    //{
-    //    energyText.text = "Energy: " + currentEnergy + " / " + maxEnergy;
-    //    shieldText.text = "Shield: " + currentShield + " / " + maxShield;
-    //    healthText.text = "Health: " + currentHealth + " / " + maxHealth;
-    //}
 }

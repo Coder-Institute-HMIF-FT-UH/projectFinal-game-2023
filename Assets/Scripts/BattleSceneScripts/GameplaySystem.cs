@@ -12,6 +12,7 @@ public class GameplaySystem : MonoBehaviour
 
     public Player player;
     public Enemy enemy, enemy1, enemy2;
+    public GameObject losePanel;
 
     public Text energyText;
     public Text playerHpText, playerShieldText;
@@ -22,7 +23,6 @@ public class GameplaySystem : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
-        //enemy = GameObject.FindObjectOfType<Enemy>();
         isYourTurn = true;
         DrawCardToHand();
     }
@@ -30,6 +30,10 @@ public class GameplaySystem : MonoBehaviour
     void Update()
     {
         UpdateUI();//text ui update
+        if (player.currentHealth <= 0)
+        {
+            losePanel.SetActive(true);
+        }
         if (!isYourTurn)
         {
             //kalau nd sampai 5 di drawdeck, dia reset duluan isi drawdeck
@@ -117,9 +121,15 @@ public class GameplaySystem : MonoBehaviour
         playerShieldText.text = player.currentShield.ToString();
         enemyHpText.text = enemy.currentHealth.ToString();
         enemyShieldText.text = enemy.currentShield.ToString();
-        enemyHpText1.text = enemy1.currentHealth.ToString();
-        enemyShieldText1.text = enemy1.currentShield.ToString();
-        enemyHpText2.text = enemy2.currentHealth.ToString();
-        enemyShieldText2.text = enemy2.currentShield.ToString();
+        if (enemy1 != null)
+        {
+            enemyHpText1.text = enemy1.currentHealth.ToString();
+            enemyShieldText1.text = enemy1.currentShield.ToString();
+        }
+        if (enemy2 != null)
+        {
+            enemyHpText2.text = enemy2.currentHealth.ToString();
+            enemyShieldText2.text = enemy2.currentShield.ToString();
+        }
     }
 }

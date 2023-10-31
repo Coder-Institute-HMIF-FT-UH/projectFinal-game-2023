@@ -85,6 +85,7 @@ public class CardLogic : MonoBehaviour
         {
             case BuffVariation.Buff1:
                 // Implement Buff1 logic
+                Debug.Log("Buff 1 berfungsi");
                 break;
             case BuffVariation.Buff2:
                 // Implement Buff2 logic
@@ -99,6 +100,7 @@ public class CardLogic : MonoBehaviour
         {
             case DebuffVariation.Debuff1:
                 // Implement Debuff1 logic
+                Debug.Log("Debuff 1 berfungsi");
                 break;
             case DebuffVariation.Debuff2:
                 // Implement Debuff2 logic
