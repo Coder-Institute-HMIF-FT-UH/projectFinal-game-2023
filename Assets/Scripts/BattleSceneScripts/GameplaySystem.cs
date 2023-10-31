@@ -26,6 +26,7 @@ public class GameplaySystem : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
         isYourTurn = true;
         DrawCardToHand();
+        player.ReplenishEnergy(player.maxEnergy);
     }
 
     void Update()
@@ -124,17 +125,35 @@ public class GameplaySystem : MonoBehaviour
         energyText.text = player.currentEnergy.ToString() + "/3";
         playerHpText.text = player.currentHealth.ToString();
         playerShieldText.text = player.currentShield.ToString();
-        enemyHpText.text = enemy.currentHealth.ToString();
-        enemyShieldText.text = enemy.currentShield.ToString();
+        if (enemy != null)
+        {
+            enemyHpText.text = enemy.currentHealth.ToString();
+            enemyShieldText.text = enemy.currentShield.ToString();
+        }
+        else
+        {
+            enemyHpText.gameObject.SetActive(false);
+            enemyShieldText.gameObject.SetActive(false);
+        }
         if (enemy1 != null)
         {
             enemyHpText1.text = enemy1.currentHealth.ToString();
             enemyShieldText1.text = enemy1.currentShield.ToString();
         }
+        else
+        {
+            enemyHpText1.gameObject.SetActive(false);
+            enemyShieldText1.gameObject.SetActive(false);
+        }
         if (enemy2 != null)
         {
             enemyHpText2.text = enemy2.currentHealth.ToString();
             enemyShieldText2.text = enemy2.currentShield.ToString();
+        }
+        else
+        {
+            enemyHpText2.gameObject.SetActive(false);
+            enemyShieldText2.gameObject.SetActive(false);
         }
     }
 

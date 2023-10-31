@@ -16,7 +16,51 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if (currentShield > 0)
+        {
+            if (damage <= currentShield)
+            {
+                currentShield -= damage;
+            }
+            else
+            {
+                damage -= currentShield;
+                currentShield = 0;
+                currentHealth -= damage;
+            }
+        }
+        else
+        {
+            currentHealth -= damage;
+        }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void TakeDamageAll(int damage)
+    {
+        // Implement the same damage logic here
+        if (currentShield > 0)
+        {
+            if (damage <= currentShield)
+            {
+                currentShield -= damage;
+            }
+            else
+            {
+                damage -= currentShield;
+                currentShield = 0;
+                currentHealth -= damage;
+            }
+        }
+        else
+        {
+            currentHealth -= damage;
+        }
+
         if (currentHealth <= 0)
         {
             Die();

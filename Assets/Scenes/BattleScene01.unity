@@ -714,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2089,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2162,7 +2162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2381,9 +2381,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1044940526}
   - {fileID: 341323484}
   - {fileID: 1072917853}
-  - {fileID: 1044940526}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3545,9 +3545,9 @@ MonoBehaviour:
   - {fileID: 872968506}
   - {fileID: 464244656}
   player: {fileID: 0}
-  enemy: {fileID: 341323485}
-  enemy1: {fileID: 1072917854}
-  enemy2: {fileID: 1044940527}
+  enemy: {fileID: 1044940527}
+  enemy1: {fileID: 341323485}
+  enemy2: {fileID: 1072917854}
   losePanel: {fileID: 574032364}
   energyText: {fileID: 97118859}
   playerHpText: {fileID: 865029071}

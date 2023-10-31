@@ -2360,7 +2360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5151554086891343319, guid: 4b95156b69dbe024abdea19c32b0ba3c, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5151554086891343319, guid: 4b95156b69dbe024abdea19c32b0ba3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2595,7 +2595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 825575293323872201, guid: 2e2b8b35cac374149a21c72291538bbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2870,8 +2870,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 948607083}
   - {fileID: 1102415183}
+  - {fileID: 948607083}
   - {fileID: 767810783}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -3612,8 +3612,8 @@ MonoBehaviour:
   - {fileID: 872968506}
   - {fileID: 464244656}
   player: {fileID: 0}
-  enemy: {fileID: 948607084}
-  enemy1: {fileID: 1102415184}
+  enemy: {fileID: 1102415184}
+  enemy1: {fileID: 948607084}
   enemy2: {fileID: 767810784}
   losePanel: {fileID: 824728411}
   energyText: {fileID: 1375825196}

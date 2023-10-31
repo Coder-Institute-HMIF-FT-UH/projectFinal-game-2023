@@ -93,19 +93,24 @@ public class CardLogic : MonoBehaviour
         {
             case BuffVariation.Buff1:
                 // Implement Buff1 logic
-                Debug.Log("Buff 1 berfungsi");
                 break;
             case BuffVariation.ShieldEach:
                 //currentshield += 3
                 //hitung jumlah musuh, int = getcomponent<enemy>().count()
                 //currentshield = currentshield * int
+                player.currentShield += 3;
+                int enemyCount = FindObjectsOfType<Enemy>().Length;
+                player.currentShield *= enemyCount;
                 break;
             case BuffVariation.DoubleShield:
                 //currentshield += 6
                 //currentshield * 2
+                player.currentShield += 6;
+                player.currentShield *= 2;
                 break;
             case BuffVariation.Heal:
                 //heal 14
+                player.currentHealth += 14;
                 break;
             case BuffVariation.ReturnAndHeal:
                 //Taruh variabel di musuh
@@ -130,10 +135,10 @@ public class CardLogic : MonoBehaviour
         {
             case DebuffVariation.Debuff1:
                 // Implement Debuff1 logic
-                Debug.Log("Debuff 1 berfungsi");
                 break;
             case DebuffVariation.DamageToAll:
                 //Panggil fungsi broadcast yang ada di enemy
+                BroadcastMessage("TakeDamageAll");
                 break;
             case DebuffVariation.EqualShield:
                 //attack musuh dimana damage = currentshield
@@ -197,9 +202,17 @@ public class CardLogic : MonoBehaviour
                     if (enemy != null)
                     {
                         ApplyCardEffect(enemy); // Pass the enemy reference to the ApplyCardEffect method.
-                        //kartu dibawa ke discard deck
-                        //hilangkan karu
+                                                //kartu dibawa ke discard deck
+                                                //hilangkan karu
                         Destroy(gameObject);
+                        //if (player.UseEnergy(energyCost) == true)
+                        //{
+                            
+                        //}
+                        //else
+                        //{
+                        //    transform.position = defaultPosition;
+                        //}
                     }
                 }
             }
@@ -207,6 +220,5 @@ public class CardLogic : MonoBehaviour
             // If not over an enemy, move the card back to its default position.
             transform.position = defaultPosition;
         }
-
     }
 }

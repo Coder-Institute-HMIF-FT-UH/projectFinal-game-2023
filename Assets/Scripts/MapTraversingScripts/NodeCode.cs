@@ -54,7 +54,7 @@ public class NodeCode : MonoBehaviour
         //}
         if (potentialRestArea1)
         {
-            nodeTypeRandom = Random.Range(4, 5);
+            nodeTypeRandom = 5;
             if (nodeTypeRandom == 4)
             {
                 spriteRenderer.sprite = nodeSprites[0];
@@ -66,7 +66,7 @@ public class NodeCode : MonoBehaviour
         }
         if (potentialRestArea2)
         {
-            nodeTypeRandom = Random.Range(4, 5);
+            nodeTypeRandom = 5;
             if (nodeTypeRandom == 4)
             {
                 spriteRenderer.sprite = nodeSprites[0];

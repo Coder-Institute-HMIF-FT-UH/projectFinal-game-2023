@@ -2317,9 +2317,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1801263939}
   - {fileID: 1214201905}
   - {fileID: 1475059980}
-  - {fileID: 1801263939}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2362,7 +2362,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2717937311320153965, guid: 47c0b412a13d6c64f9a64bfa403132f2, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2717937311320153965, guid: 47c0b412a13d6c64f9a64bfa403132f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2706,7 +2706,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5151554086891343319, guid: 4b95156b69dbe024abdea19c32b0ba3c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5151554086891343319, guid: 4b95156b69dbe024abdea19c32b0ba3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3363,9 +3363,9 @@ MonoBehaviour:
   - {fileID: 872968506}
   - {fileID: 464244656}
   player: {fileID: 0}
-  enemy: {fileID: 1214201906}
-  enemy1: {fileID: 1475059981}
-  enemy2: {fileID: 1801263940}
+  enemy: {fileID: 1801263940}
+  enemy1: {fileID: 1214201906}
+  enemy2: {fileID: 1475059981}
   losePanel: {fileID: 429085827}
   energyText: {fileID: 1824288505}
   playerHpText: {fileID: 115941892}
@@ -3419,7 +3419,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5151554086891343319, guid: 4b95156b69dbe024abdea19c32b0ba3c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5151554086891343319, guid: 4b95156b69dbe024abdea19c32b0ba3c, type: 3}
       propertyPath: m_LocalPosition.x
