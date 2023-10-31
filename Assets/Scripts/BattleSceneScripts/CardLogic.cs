@@ -13,14 +13,22 @@ public enum CardType
 public enum BuffVariation
 {
     Buff1,
-    Buff2,
+    ShieldEach,
+    DoubleShield,
+    ReturnAndHeal,
+    ReturnToAll,
+    Return2Turn,
+    Heal,
     // Add more variations as needed
 }
 
 public enum DebuffVariation
 {
     Debuff1,
-    Debuff2,
+    DamageToAll,
+    EqualShield,
+    Weaken,
+    Weak,
     // Add more variations as needed
 }
 
@@ -87,10 +95,32 @@ public class CardLogic : MonoBehaviour
                 // Implement Buff1 logic
                 Debug.Log("Buff 1 berfungsi");
                 break;
-            case BuffVariation.Buff2:
-                // Implement Buff2 logic
+            case BuffVariation.ShieldEach:
+                //currentshield += 3
+                //hitung jumlah musuh, int = getcomponent<enemy>().count()
+                //currentshield = currentshield * int
                 break;
-                // Add more variations as needed
+            case BuffVariation.DoubleShield:
+                //currentshield += 6
+                //currentshield * 2
+                break;
+            case BuffVariation.Heal:
+                //heal 14
+                break;
+            case BuffVariation.ReturnAndHeal:
+                //Taruh variabel di musuh
+                //jika musuh menyerang, kena demeg
+                //heal
+                break;
+            case BuffVariation.ReturnToAll:
+                //Taruh variabel di musuh
+                //jika musuh menyerang, kena demeg tapi ke semua musuh (broadcast)
+                break;
+            case BuffVariation.Return2Turn:
+                //Taruh variabel di musuh
+                //jika musuh menyerang, kena demeg, tapi buff ini bertahan 2 turn
+                break;
+                
         }
     }
 
@@ -102,10 +132,18 @@ public class CardLogic : MonoBehaviour
                 // Implement Debuff1 logic
                 Debug.Log("Debuff 1 berfungsi");
                 break;
-            case DebuffVariation.Debuff2:
-                // Implement Debuff2 logic
+            case DebuffVariation.DamageToAll:
+                //Panggil fungsi broadcast yang ada di enemy
                 break;
-                // Add more variations as needed
+            case DebuffVariation.EqualShield:
+                //attack musuh dimana damage = currentshield
+                break;
+            case DebuffVariation.Weaken:
+                //aktifkan variabel weaken di musuh, int = 1
+                break;
+            case DebuffVariation.Weak:
+                //aktifkan variabel weak di musuh, int = 1
+                break;
         }
     }
 
