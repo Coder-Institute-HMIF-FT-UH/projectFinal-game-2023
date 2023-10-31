@@ -17,6 +17,7 @@ public class GameplaySystem : MonoBehaviour
     public Text energyText;
     public Text playerHpText, playerShieldText;
     public Text enemyHpText, enemyShieldText, enemyHpText1, enemyShieldText1, enemyHpText2, enemyShieldText2;
+    public Text drawCount, discardCount;
 
     [SerializeField] private bool isYourTurn; 
 
@@ -46,6 +47,8 @@ public class GameplaySystem : MonoBehaviour
             Invoke("RandomlySelectEnemyMove", 1f);
             //invoke 3 detik, method 5 card dari draw deck ke (handpool) + invoke 1 detik
             Invoke("DrawCardToHand", 1f);
+            //invoke reset shield
+            Invoke("ResetStatus", 1f);
             //isyurturn = true
             isYourTurn = true;  
         }
@@ -116,7 +119,9 @@ public class GameplaySystem : MonoBehaviour
 
     public void UpdateUI()
     {
-        energyText.text = player.currentEnergy.ToString();
+        drawCount.text = drawDeckScript.drawDeckCards.Count.ToString();
+        discardCount.text = discardDeckScript.discardDeckCards.Count.ToString();
+        energyText.text = player.currentEnergy.ToString() + "/3";
         playerHpText.text = player.currentHealth.ToString();
         playerShieldText.text = player.currentShield.ToString();
         enemyHpText.text = enemy.currentHealth.ToString();
@@ -130,6 +135,20 @@ public class GameplaySystem : MonoBehaviour
         {
             enemyHpText2.text = enemy2.currentHealth.ToString();
             enemyShieldText2.text = enemy2.currentShield.ToString();
+        }
+    }
+
+    public void ResetStatus()
+    {
+        player.currentShield = 0;
+        enemy.currentShield = 0;
+        if (enemy1 != null)
+        {
+            enemy1.currentShield = 0;
+        }
+        if (enemy2 != null)
+        {
+            enemy2.currentShield = 0;
         }
     }
 }
