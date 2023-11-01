@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6666666, y: 2.1333334}
+    oldSize: {x: 2.0833333, y: 2.6666667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 0
   energyCost: 1
-  cardType: 0
+  cardType: 3
   player: {fileID: 0}
   buffVariation: 0
-  debuffVariation: 0
+  debuffVariation: 2

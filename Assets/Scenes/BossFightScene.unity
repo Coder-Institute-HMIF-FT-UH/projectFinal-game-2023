@@ -2877,10 +2877,10 @@ MonoBehaviour:
   playerShieldText: {fileID: 595309685}
   enemyHpText: {fileID: 653043133}
   enemyShieldText: {fileID: 1774539419}
-  enemyHpText1: {fileID: 0}
-  enemyShieldText1: {fileID: 0}
-  enemyHpText2: {fileID: 0}
-  enemyShieldText2: {fileID: 0}
+  enemyHpText1: {fileID: 1231179858}
+  enemyShieldText1: {fileID: 1661047621}
+  enemyHpText2: {fileID: 1147780332}
+  enemyShieldText2: {fileID: 1544077466}
   drawCount: {fileID: 1138050899}
   discardCount: {fileID: 2137309403}
   isYourTurn: 0

@@ -3507,8 +3507,8 @@ MonoBehaviour:
   enemyShieldText: {fileID: 191379210}
   enemyHpText1: {fileID: 534333578}
   enemyShieldText1: {fileID: 1526418553}
-  enemyHpText2: {fileID: 0}
-  enemyShieldText2: {fileID: 0}
+  enemyHpText2: {fileID: 887681029}
+  enemyShieldText2: {fileID: 917952465}
   drawCount: {fileID: 979748583}
   discardCount: {fileID: 30317096}
   isYourTurn: 0
