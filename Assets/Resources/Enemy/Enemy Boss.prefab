@@ -100,9 +100,10 @@ MonoBehaviour:
   currentHealth: 0
   maxShield: 100
   currentShield: 0
+  floatingTextTemplate: {fileID: 0}
+  canvasTransform: {fileID: 0}
   weakenDamageMultiplier: 150
   isWeaken: 0
-  weakDamageNullifier: 2
   isWeak: 0
 --- !u!61 &-6498096130268128100
 BoxCollider2D:
@@ -128,5 +129,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0

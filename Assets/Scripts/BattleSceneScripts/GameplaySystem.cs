@@ -44,6 +44,7 @@ public class GameplaySystem : MonoBehaviour
                 drawDeckScript.drawDeckCards.AddRange(discardDeckScript.discardDeckCards);
                 discardDeckScript.discardDeckCards.Clear();
             }
+            enemy.currentShield = 0; //shield musuh null kan
             //method beberapa serangan musuh (random.range + switch case) + invoke 1 detik
             Invoke("RandomlySelectEnemyMove", 1f);
             //invoke 3 detik, method 5 card dari draw deck ke (handpool) + invoke 1 detik
@@ -107,13 +108,46 @@ public class GameplaySystem : MonoBehaviour
         switch (randomMove)
         {
             case 1:
-                enemy.AttackPlayer(player, 10); // Choose the first moveset (attack)
+                if (enemy != null)
+                {
+                    enemy.AttackPlayer(player, 10); // Choose the first moveset (attack)
+                }
+                if (enemy1 != null)
+                {
+                    enemy1.GainShield(10);
+                }
+                if (enemy2 != null)
+                {
+                    enemy2.GainShield(10);
+                }
                 break;
             case 2:
-                enemy.GainShield(20); // Choose the second moveset (gain shield)
+                if (enemy != null)
+                {
+                    enemy.GainShield(20); // Choose the second moveset (gain shield)
+                }
+                if (enemy1 != null)
+                {
+                    enemy1.AttackPlayer(player, 3);
+                }
+                if (enemy2 != null)
+                {
+                    enemy2.AttackPlayer(player, 4);
+                }
                 break;
             case 3:
-                enemy.HealingSelf(5); 
+                if (enemy != null)
+                {
+                    enemy.HealingSelf(5);
+                }
+                if (enemy1 != null)
+                {
+                    enemy1.HealingSelf(10);
+                }
+                if (enemy2 != null)
+                {
+                    enemy2.GainShield(6);
+                }
                 break;
         }
     }
@@ -163,7 +197,7 @@ public class GameplaySystem : MonoBehaviour
         player.CleanReturnAndHeal();
         player.CleanReturnToAll();
         player.CleanReturnTwoTurn();
-        enemy.currentShield = 0;
+        //enemy.currentShield = 0;
         enemy.CleanWeaken();
         enemy.CleanWeak();
         if (enemy1 != null)
