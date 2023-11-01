@@ -160,14 +160,23 @@ public class GameplaySystem : MonoBehaviour
     public void ResetStatus()
     {
         player.currentShield = 0;
+        player.CleanReturnAndHeal();
+        player.CleanReturnToAll();
+        player.CleanReturnTwoTurn();
         enemy.currentShield = 0;
+        enemy.CleanWeaken();
+        enemy.CleanWeak();
         if (enemy1 != null)
         {
             enemy1.currentShield = 0;
+            enemy1.CleanWeaken();
+            enemy1.CleanWeak();
         }
         if (enemy2 != null)
         {
             enemy2.currentShield = 0;
+            enemy2.CleanWeaken();
+            enemy2.CleanWeak();
         }
     }
 }

@@ -114,15 +114,18 @@ public class CardLogic : MonoBehaviour
                 break;
             case BuffVariation.ReturnAndHeal:
                 //Taruh variabel di musuh
+                player.ReturnAndHeal();
                 //jika musuh menyerang, kena demeg
                 //heal
                 break;
             case BuffVariation.ReturnToAll:
                 //Taruh variabel di musuh
-                //jika musuh menyerang, kena demeg tapi ke semua musuh (broadcast)
+                player.ReturnToAll();
+                //jika musuh menyerang, kena demeg tapi ke semua musuh (dikumpulin lagi)
                 break;
             case BuffVariation.Return2Turn:
                 //Taruh variabel di musuh
+                player.ReturnTwoTurn();
                 //jika musuh menyerang, kena demeg, tapi buff ini bertahan 2 turn
                 break;
                 
@@ -137,17 +140,25 @@ public class CardLogic : MonoBehaviour
                 // Implement Debuff1 logic
                 break;
             case DebuffVariation.DamageToAll:
-                //Panggil fungsi broadcast yang ada di enemy
-                BroadcastMessage("TakeDamageAll");
+                // Cari semua musuh yang di attached scriptEnemy
+                Enemy[] scriptEnemyObjects = FindObjectsOfType<Enemy>();
+                // Tiap isi dari scriptEnemyObjects akan dilakukan pemanggilan fungsi
+                foreach (Enemy enemies in scriptEnemyObjects)
+                {
+                    enemies.TakeDamageAll(8);
+                }
                 break;
             case DebuffVariation.EqualShield:
                 //attack musuh dimana damage = currentshield
+                enemy.TakeDamage(player.currentShield);
                 break;
             case DebuffVariation.Weaken:
-                //aktifkan variabel weaken di musuh, int = 1
+                //aktifkan variabel weaken di musuh,
+                enemy.Weaken();
                 break;
             case DebuffVariation.Weak:
-                //aktifkan variabel weak di musuh, int = 1
+                //aktifkan variabel weak di musuh,
+                enemy.Weak();
                 break;
         }
     }
@@ -166,7 +177,6 @@ public class CardLogic : MonoBehaviour
         objectStartPos = transform.position;
         isDragging = true;
     }
-
     private void OnMouseDrag()
     {
         // Add this method to handle the drag behavior.

@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    public bool isReturnAndHeal = false;
+    public bool isReturnToAll = false;
+    public bool isReturnTwoTurn = false;
+    public int returnTwo = 2;
+
     public Text energyText;
     public Text shieldText;
     public Text healthText;
@@ -34,8 +39,12 @@ public class Player : MonoBehaviour
         }
         currentEnergy = maxEnergy;
         currentShield = 0;
+        isReturnAndHeal = false;
+        isReturnToAll = false;
+        isReturnTwoTurn = false;
     }
-
+    
+    //Player behaviour
     public bool UseEnergy(int energyCost)
     {
         if (currentEnergy >= energyCost)
@@ -49,7 +58,6 @@ public class Player : MonoBehaviour
             return false;
         }
     }
-
     public void ReplenishEnergy(int energyAmount)
     {
         currentEnergy = energyAmount;
@@ -62,7 +70,6 @@ public class Player : MonoBehaviour
             currentEnergy = maxEnergy;
         }
     }
-
     public void GainShield(int shieldValue)
     {
         currentShield += shieldValue;
@@ -71,13 +78,13 @@ public class Player : MonoBehaviour
             currentShield = 0;
         }
     }
-
     public void ApplyBuff(int buffValue)
     {
         // Implement buff logic here
         Debug.Log("buff sendiri");
     }
 
+    //Player damage function
     public void TakeDamage(int damage)
     {
         if (currentShield > 0)
@@ -104,6 +111,35 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void ReturnAndHeal()
+    {
+        isReturnAndHeal = true;
+    }
+    public void CleanReturnAndHeal()
+    {
+        isReturnAndHeal = false;
+    }
+    public void ReturnToAll()
+    {
+        isReturnToAll = true;
+    }
+    public void CleanReturnToAll()
+    {
+        isReturnToAll = false;
+    }
+    public void ReturnTwoTurn()
+    {
+        returnTwo = 2;
+        isReturnTwoTurn = true;
+    }
+    public void CleanReturnTwoTurn()
+    {
+        returnTwo -= 1;
+        if (returnTwo <= 0)
+        {
+            isReturnTwoTurn = false;
+        }
+    }
     private void Die()
     {
         //balik ke main menu
